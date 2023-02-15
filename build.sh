@@ -10,7 +10,7 @@ if [ -f ${JPG_FILE} ]; then
 fi
 
 gcc \
-    YuvToJpegLib.c UyvyToJpeg.c \
+    YuvToJpegLib.c UyvyToJpegApp.c \
     -o ${EXE_FILE} \
     -I /usr/local/include \
     -L /usr/lib/ -ljpeg \
