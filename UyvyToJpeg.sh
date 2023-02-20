@@ -1,17 +1,22 @@
 
-EXE_FILE=uyvyToJpeg
+EXE_FILE=UyvyToJpeg
 if [ -f ${EXE_FILE} ]; then
     rm ${EXE_FILE}
 fi
 
-JPG_FILE=uyvy.jpg
+JPG_FILE=Uyvy-1280x720.jpg
 if [ -f ${JPG_FILE} ]; then
     rm ${JPG_FILE}
 fi
 
 gcc \
-    YuvToJpegLib.c UyvyToJpegApp.c \
+    ../YuvLib/YuvLibFile.c ../YuvLibJpeg/YuvLibJpeg.c \
+    UyvyToJpegApp.c \
     -o ${EXE_FILE} \
     -I /usr/local/include \
     -L /usr/lib/ -ljpeg \
+    -I ../YuvLib \
+    -I ../YuvLibJpeg
+
+./${EXE_FILE}
 
